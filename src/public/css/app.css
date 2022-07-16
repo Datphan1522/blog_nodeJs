@@ -1,0 +1,14 @@
+.card {
+  margin: 20px 10px;
+  background-color: #d3f6e9; }
+
+.card .card-img {
+  max-height: 170px; }
+
+.card .card-body .btn {
+  width: 60px;
+  height: 40px;
+  background-color: bisque; }
+
+.card .card-body .btn:hover {
+  background-color: #24a0bc; }

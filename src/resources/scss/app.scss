@@ -1,0 +1,18 @@
+.card {
+    margin: 20px 10px;
+    background-color: rgb(211, 246, 233);
+}
+
+.card .card-img {
+    max-height: 170px;
+}
+
+.card .card-body .btn {
+    width: 60px;
+    height: 40px;
+    background-color: bisque;
+}
+
+.card .card-body .btn:hover {
+    background-color: rgb(36, 160, 188);
+}
