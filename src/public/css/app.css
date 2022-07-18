@@ -12,3 +12,7 @@
 
 .card .card-body .btn:hover {
   background-color: #24a0bc; }
+
+.col-lg-3 {
+  background-color: aquamarine;
+  text-align: center; }
