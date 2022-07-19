@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
 const handlebars = require('express-handlebars')
+const methodOverride = require('method-override')
 const app = express()
 const port = 3000
 
@@ -18,9 +19,16 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
+app.use(methodOverride('_method')) //chuyển hướng phương thức
+
 //--------------
 const exphbs = require('express-handlebars')
-const hbs = exphbs.create({ extname: 'hbs' })
+const hbs = exphbs.create({
+        extname: 'hbs',
+        helpers: {
+            sum: (a, b) => a + b,
+        }
+    })
     //HTTP logger
     // app.use(morgan('combined'))
 
