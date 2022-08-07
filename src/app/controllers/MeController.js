@@ -3,11 +3,23 @@ const { mutipleMongooseToObject, mongooseToObject } = require('../../util/mongoo
 class MeController {
     //[GET] /me/stored/courses
     storedCourses(req, res, next) {
-        Course.find({})
-            .then(courses => res.render('me/stored-courses', {
-                courses: mutipleMongooseToObject(courses)
+
+        Promise.all([Course.find({}), Course.countDocumentsDeleted()])
+            .then(([courses, deleteCourse]) => res.render('me/stored-courses', {
+                courses: mutipleMongooseToObject(courses),
+                deleteCourse
             }))
             .catch(next)
+
+        // Course.countDocumentsDeleted()
+        //     .then(deleteCourse)
+        //     .catch(() => {})
+
+        // Course.find({})
+        //     .then(courses => res.render('me/stored-courses', {
+        //         courses: mutipleMongooseToObject(courses)
+        //     }))
+        //     .catch(next)
 
     }
 
