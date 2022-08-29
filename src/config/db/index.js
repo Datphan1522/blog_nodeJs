@@ -12,3 +12,5 @@ async function connect() {
     }
 }
 module.exports = { connect }
+
+// mongodb+srv://datphan1522:<password>@cluster0.pz9pit4.mongodb.net/database_f8
